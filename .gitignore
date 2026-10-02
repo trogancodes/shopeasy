@@ -3,3 +3,9 @@
 .env
 .vscode/
 .idea/
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+*.pem
+*.tfvars
