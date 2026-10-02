@@ -38,8 +38,8 @@ resource "aws_internet_gateway" "igw" {
 
 # 3. Subnet - a smaller section of the VPC where the EC2 instance lives
 resource "aws_subnet" "public" {
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = var.subnet_cidr
+  vpc_id     = aws_vpc.main.id
+  cidr_block = var.subnet_cidr
   #availability_zone = "${var.region}a"
   availability_zone = var.availability_zone
 
@@ -135,7 +135,8 @@ resource "aws_instance" "web" {
   user_data_replace_on_change = true
 
   tags = {
-    Name = "${var.project_name}-ec2"
+    Name     = "${var.project_name}-ec2"
+    Training = "ShopEasy-DevOps-Lab"
   }
 }
 
